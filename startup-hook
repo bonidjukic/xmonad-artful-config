@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ -z "$(pgrep remmina)" ] ; then
+    remmina -i &
+fi
+
+if [ -z "$(pgrep nm-applet)" ] ; then
+    nm-applet --sm-disable &
+fi
+
+if [ -z "$(pgrep system-config-printer-applet)" ] ; then
+    system-config-printer-applet &
+fi
+
+if [ -z "$(pgrep synapse)" ] ; then
+    synapse -s &
+fi
+
+# waiting half a second before executing stalonetray
+# seems to help with it starting with no issues
+sleep .5
+stalonetray -c ~/.xmonad/stalonetrayrc

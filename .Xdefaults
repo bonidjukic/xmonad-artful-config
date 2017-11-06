@@ -1,0 +1,28 @@
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.rgba: none
+Xft.dpi: 144
+
+URxvt.buffered: true
+URxvt.background: #e0e0e0
+URxvt.foreground: #111111
+URxvt.cursorColor: green
+URxvt.underlineColor: yellow
+URxvt.font: xft:Inconsolata:pixelsize=12:antialias=false
+URxvt.boldFont: xft:Inconsolata:bold:pixelsize=12:antialias=false
+URxvt.perl-ext-common: default,tabbed,matcher
+URxvt.urlLauncher: google-chrome
+URxvt.matcher.button: 2
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+
+XTerm*alwaysHighlight: yes
+XTerm*background: black
+XTerm*foreground: #eeeeee
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 12
+*VT100.Translations: #override Shift <Key>Up: scroll-back(1) \n\
+                     Shift <Key>Down: scroll-forw(1)
+XTerm*saveLines: 50000
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false

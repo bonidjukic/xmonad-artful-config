@@ -1,0 +1,84 @@
+Config {
+  font = "xft:SFNS Display:size=10",
+  additionalFonts = ["xft:FontAwesome:size=10"],
+  alpha = 0,
+  bgColor = "#575757",
+  fgColor = "#dcdccc",
+  position = TopW L 94,
+  persistent = False
+
+  commands = [
+    Run MultiCpu [
+      "-t", "<fn=1>\xf0ae</fn> <total>%",
+      "-w","2",
+      "-c","0",
+      "-H","50",
+      "--high","red"
+    ] 10,
+
+    Run Memory [
+      "-a", "l",
+     "-w", "4",
+     "-t","<fn=1>\xf2db</fn><usedratio>%",
+     "-L", "50",
+     "-H", "75",
+     "-l", "lightgreen",
+     "-n", "yellow",
+     "-h", "red"
+    ] 10,
+
+    Run Date "%d-%m-%Y  %H:%M:%S" "date" 10,
+
+    Run Battery [
+      "--template" , "<acstatus>",
+      "--Low"      , "10",
+      "--High"     , "50",
+      "--low"      , "red",
+      "--normal"   , "yellow",
+      "--high"     , "lightgreen",
+      "--",
+      "-o"  , "<leftipat>  <left>%",
+      "-O"  , "<leftipat>  <left>%",
+      "-i"  , "<leftipat>  <left>%",
+      --"-i"  , "<fn=1>\xf240</fn>",
+      "--off-icon-pattern", "<fn=1>\xf240</fn>",
+      "--on-icon-pattern", "<fn=1>\xf0e7</fn>",
+      "--idle-icon-pattern", "<fn=1>\xf0e7</fn>"
+    ] 50,
+
+    Run Com "/bin/bash" ["-c", "~/.xmonad/get-volume"] "myvolume" 10,
+
+    Run UnsafeStdinReader,
+
+    Run Wireless "wlp58s0" [
+      "-a", "l",
+      "-t", "<fn=1>\xf1eb</fn> <essid>",
+      "-L", "50",
+      "-H", "75",
+      "-l", "red",
+      "-n", "yellow",
+      "-h", "lightgreen"
+    ] 10,
+
+    Run ThermalZone 0 [
+      "-t","<fn=1>\xf2c9</fn> <temp>°C",
+      "--Low"      , "50",
+      "--High"     , "60",
+      "--low"      , "lightgreen",
+      "--normal"   , "yellow",
+      "--high"     , "red"
+    ] 30,
+
+    Run Brightness [
+      "-t", "<fn=1>\xf0eb</fn> <percent>%",
+      "--",
+      "-D", "intel_backlight"
+    ] 50
+
+   ],
+
+   sepChar = "%",
+   alignSep = "}{",
+
+   template = "%UnsafeStdinReader% }{ %wlp58s0wi%  |  %battery%  |  %multicpu%  |  %memory%  |  %bright%  |  %thermal0%  | Vol: %myvolume% |  %date%  "
+}

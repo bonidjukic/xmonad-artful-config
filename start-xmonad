@@ -1,0 +1,30 @@
+#!/bin/bash
+
+xcompmgr -n &
+
+xrandr --output eDP-1 --primary
+xrandr | grep 'HDMI-2 connected' | ifne xrandr --output HDMI-2 --auto --right-of eDP-1
+
+nitrogen --restore &
+
+gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
+
+xsetroot -cursor_name left_ptr
+
+xrdb -merge ~/.Xdefaults
+
+dropbox start &
+gnome-settings-daemon &
+unity-settings-deamon &
+
+eval "$(ssh-agent)" &
+ssh-add &
+
+redshift -l 43:1.44 &
+google-chrome &
+nautilus &
+subl &
+
+exec xmonad
+
+1
