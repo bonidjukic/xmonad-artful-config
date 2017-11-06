@@ -3,17 +3,17 @@
 sudo apt update
 
 sudo apt install xmonad \
-  libghc-xmonad-dev \
-  libghc-xmonad-contrib-dev \
-  xmobar \
-  xcompmgr \
-  nitrogen \
-  stalonetray \
-  moreutils \
-  consolekit \
-  synapse \
-  ssh-askpass-gnome \
-  thunar \
-  terminator remmina
+                 libghc-xmonad-dev \
+                 libghc-xmonad-contrib-dev \
+                 xmobar \
+                 xcompmgr \
+                 nitrogen \
+                 stalonetray \
+                 moreutils \
+                 consolekit \
+                 synapse \
+                 ssh-askpass-gnome \
+                 remmina \
+                 fonts-font-awesome
 
 cp ~/.xmonad/.Xdefaults ~/
