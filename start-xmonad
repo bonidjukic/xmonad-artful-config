@@ -2,8 +2,17 @@
 
 xcompmgr -n &
 
-xrandr --output eDP-1 --primary
-xrandr | grep 'HDMI-2 connected' | ifne xrandr --output HDMI-2 --auto --right-of eDP-1
+xrandr --output DP2-1 --off \
+       --output eDP1 --primary \
+       --mode 2560x1440 \
+       --pos 0x0 \
+       --rotate normal
+
+xrandr | grep 'DP2-1 connected' | ifne xrandr --output eDP1 --auto \
+                                              --output DP2-1 --auto \
+                                              --panning 3200x1350+2560+0 \
+                                              --scale 1.25x1.25 \
+                                              --right-of eDP1
 
 nitrogen --restore &
 
