@@ -17,3 +17,8 @@ sudo apt install xmonad \
                  fonts-font-awesome
 
 cp ~/.xmonad/.Xdefaults ~/
+
+# set trackpoint sensitivity
+sudo cp ~/.xmonad/trackpoint.rules /etc/udev/rules.d/trackpoint.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
