@@ -64,8 +64,8 @@ myKeyBindings =
     , ((0, 0x1008FF11), spawn "amixer -q set Master 7%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 7%+")
     , ((0, 0x1008ffb2), spawn "mictoggle")
-    , ((0, 0x1008ff02), spawn "xbacklight -inc 10")
-    , ((0, 0x1008ff03), spawn "xbacklight -dec 10")
+    , ((0, 0x1008ff02), spawn "xbacklight -inc 7")
+    , ((0, 0x1008ff03), spawn "xbacklight -dec 7")
     , ((0, xK_Print), spawn "shutter -s")
   ]
 
