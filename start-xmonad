@@ -6,21 +6,23 @@ xrandr --output DP2-1 --off \
        --output eDP1 --primary \
        --mode 2560x1440 \
        --pos 0x0 \
-       --rotate normal
+       --rotate normal &
 
 xrandr | grep 'DP2-1 connected' | ifne xrandr --output eDP1 --auto \
                                               --output DP2-1 --auto \
                                               --panning 3200x1350+2560+0 \
                                               --scale 1.25x1.25 \
-                                              --right-of eDP1
+                                              --right-of eDP1 &
+
+echo 200 | sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity &
 
 nitrogen --restore &
 
-gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
+gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh &
 
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
-xrdb -merge ~/.Xdefaults
+xrdb -merge ~/.Xdefaults &
 
 dropbox start &
 gnome-settings-daemon &
